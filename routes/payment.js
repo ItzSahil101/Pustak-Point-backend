@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
   const queryString = new URLSearchParams(formData).toString();
 
   // Make sure to use the UAT URL (sandbox mode) for testing
-  const paymentUrl = `https://rc.esewa.com.np/epay/main?${queryString}`;
+  const paymentUrl = `https://rc-epay.esewa.com.np/api/epay/main/v2/form?${queryString}`;
 
   res.json({ paymentUrl });
 });
