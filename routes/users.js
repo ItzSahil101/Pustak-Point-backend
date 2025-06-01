@@ -18,9 +18,9 @@ router.post("/", async (req, res) => {
       return res.status(409).send({ message: "User with given email already exists!" });
 
     // Check if deviceId is already registered
-    const existingDevice = await User.findOne({ deviceId: req.body.deviceId });
-    if (existingDevice)
-      return res.status(403).send({ message: "Account already created from this device." });
+    //const existingDevice = await User.findOne({ deviceId: req.body.deviceId });
+    //if (existingDevice)
+      //return res.status(403).send({ message: "Account already created from this device." });
 
     const salt = await bcrypt.genSalt(Number(process.env.SALT));
     const hashPassword = await bcrypt.hash(req.body.password, salt);
